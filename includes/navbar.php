@@ -10,25 +10,32 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Apropos de nous</a>
         </li>
+        <?php if(isset($_SESSION['auth_user'])):?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            <?= $_SESSION['auth_user']['user_name']?>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li> 
+            
+            <form action="allcode.php" method="POST">
+                 <button type="submit" class="dropdown-item" name="btndec">Déconnexion</button>
+            </form>
+            </li>
           </ul>
         </li>
+        <?php else :?>
         <li class="nav-item">
           <a class="nav-link" href="login.php">Connexion</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="register.php">Inscription</a>
         </li>
+
+        <?php endif;?>
       </ul>
       
     </div>

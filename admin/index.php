@@ -1,4 +1,9 @@
-<?php include('includes/header.php');?>
+<?php 
+
+include('auth.php');
+include('includes/header.php');
+
+?>
 <div class="container-fluid px-4">
     <h1 class="mt-4">Gestion des centres privés</h1>
     <ol class="breadcrumb mb-4">

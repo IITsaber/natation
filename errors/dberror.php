@@ -1,0 +1,1 @@
+<h1>Connexion à la base est echouée </h1>
